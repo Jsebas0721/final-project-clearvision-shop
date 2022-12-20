@@ -1,0 +1,46 @@
+{
+    "glasses": [
+      {
+        "id": 1,
+        "name": "BCBGMAXAZRIA AGATHA",
+        "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_agatha_vintagetortoise.jpg",
+        "price": 15.99
+      },
+      {
+        "id": 2,
+        "name": "BCBGMAXAZRIA AINSLEY",
+        "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_ainsley_red.jpg",
+        "price": 25.98
+      },
+      {
+        "id": 3,
+        "name": "BCBGMAXAZRIA ADELINA",
+        "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_adelina_rosegold.jpg",
+        "price": 5.99
+      },
+      {
+        "id": 4,
+        "name": "BCBGMAXAZRIA AUGUSTINA",
+        "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_augustina_teal.jpg",
+        "price": 12.11
+      },
+      {
+        "id": 5,
+        "name": "BCBGMAXAZRIA ASTRID",
+        "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_astrid_wine_2.jpg",
+        "price": 10.37
+      },
+      {
+        "id": 6,
+        "name": "BCBGMAXAZRIA ARISA",
+        "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_arisa_violet.jpg",
+        "price": 25.99
+      },
+      {
+        "id": 7,
+        "name": "BCBGMAXAZRIA CATERINA",
+        "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_caterina_rosegold.jpg",
+        "price": 55
+      } 
+    ]
+  }
