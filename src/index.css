@@ -1,22 +1,23 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
+  margin: 1em;
+  background-color: #141212 ;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+body {
+  color: #141212;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.80857;
+  font-weight: normal;
+}
 
 .logo {
-  
-  padding: 40cm;
-  padding-inline-end: 16cm;
-  
+  padding: 40cm;  
+}
+
+header img {
+  width: 250px;
+  height: 100px;
 }
 
 header {
@@ -25,7 +26,64 @@ header {
   
 }
 
-/* .App{
-  background-color: aqua;
-} */
+.navbar {
+  text-align: center;
+}
+.frame-container {
+  background-color: white;
+}
 
+.frame-container h2 {
+  text-align: center;
+  font-style: italic;
+}
+
+
+.frameCards {
+  list-style: none;
+}
+
+.frame-product{
+  margin: 1rem;
+  display: inline;
+  padding:3mm;
+  line-height: 0ch;
+  border-style:groove;
+}
+
+
+.frame-product img {
+  width: 100%;
+}
+
+.frame-product button {
+  margin-top: 0.5rem;
+  background-color:aqua;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: grabbing;
+}
+
+@media (min-width: 768px) {
+  .frameCards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .frame-product {
+    width: calc(33% - 2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .frame-product {
+    width: calc(25% - 2rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .frame-product {
+    width: calc(20% - 2rem);
+  }
+}
