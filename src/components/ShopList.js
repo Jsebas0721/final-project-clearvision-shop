@@ -1,12 +1,12 @@
 import React from "react";
 import Frame from "./Frame";
 
-function ShopList({frameList}){
+function ShopList({frameList, onHandleBuy}){
 
 const frames = frameList.map((frame) => (
-    <Frame key={frame.id} frame={frame}/>
+    <Frame key={frame.id} frame={frame} onHandleBuy={onHandleBuy}/>
 ))
-console.log(frames)
+
 return (
     <div className="frame-container">
         <h2>OUR GLASSES!</h2>

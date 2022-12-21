@@ -5,10 +5,12 @@ import NavBar from "./NavBar";
 import NewFrameForm from "./NewFrameForm";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
+import Cart from "./Cart";
 
 function App() {
 
-  const [frameList, setFrameList]= useState([])
+  const [frameList, setFrameList]= useState([]);
+  const [cartItems, setCartItems]= useState([]);
 
   useEffect(()=>{
     fetch('http://localhost:3000/glasses')
@@ -16,27 +18,30 @@ function App() {
     .then(frameList => setFrameList(frameList))
   },[])
 
-  console.log(frameList);
+
+  function handleBuy(frameObj){
+    setCartItems([...cartItems, frameObj])
+  }
+ 
   return (
     <div className="App">
       <Header/>
-      <hr/>
-      <div>
+      <hr/> 
       <NavBar/>
       <hr/>
-      <NewFrameForm/>
       <Switch>
-        <Route path="/Shop">
-          <ShopList frameList={frameList}/>
+        <Route  exact path="/Shop">
+          <NewFrameForm/>
+          <hr/>
+          <ShopList frameList={frameList} onHandleBuy={handleBuy}/>
         </Route>
-        <Route path="/Cart">
-          
+        <Route  exact path="/Cart">
+          <Cart cartItems={cartItems}/>
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Home />
         </Route>
       </Switch>
-      </div>
     </div>
   );
 }

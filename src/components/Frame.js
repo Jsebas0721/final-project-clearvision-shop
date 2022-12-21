@@ -1,9 +1,12 @@
 import React from "react";
 
-function Frame({frame}){
+function Frame({frame, onHandleBuy}){
 
     const{name,image, price} = frame
 
+    function handleClick(){
+        onHandleBuy(frame);   
+    }
 
     return(
         <div className="frame-product">
@@ -12,7 +15,7 @@ function Frame({frame}){
                 <h4>{name}</h4>
                 <span>
                     <p>Price: {price}</p>
-                    <button>Add to Cart!</button> 
+                    <button onClick={handleClick}>Add to Cart!</button> 
                 </span>   
             </li>
         </div>
