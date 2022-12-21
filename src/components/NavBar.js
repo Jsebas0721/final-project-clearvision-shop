@@ -24,7 +24,6 @@ return(
             >
             Home    
             </NavLink>
-            
             <NavLink
                 to="/Shop"
                 exact 

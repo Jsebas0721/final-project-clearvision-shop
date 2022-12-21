@@ -5,9 +5,7 @@ function Header(){
         <header>
             <h1>
                 CLEARVISION SHOP!
-                <span className="logo" role="img">
-                <img  src='https://yougivegoods.com/images/drives/5b6a08437a673-clearvision.png' />
-                </span>
+                <img  src='https://yougivegoods.com/images/drives/5b6a08437a673-clearvision.png'/>
             </h1>
         </header>
     );

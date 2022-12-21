@@ -4,7 +4,6 @@ function Frame({frame}){
 
     const{name,image, price} = frame
 
-    console.log(frame);
 
     return(
         <div className="frame-product">
