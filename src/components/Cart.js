@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Cart({cartItems}){
+function Cart({cartItems, onRemoveItem}){
 
+   
+
+function handleClick(event){
+    console.log("Item Removed")
+    console.log(event)
+    cartItems.map(item => {
+        if(item.id === event){
+            onRemoveItem(item);
+        }
+    })
+}
 
    const addedToCart = cartItems.map(item => (
         <tr>
@@ -15,10 +26,13 @@ function Cart({cartItems}){
                 <p>{item.price}</p>
             </td>
             <td>
-                <button>Remove From Cart</button>
+                <button onClick={() => handleClick(item.id)}>Remove From Cart</button>
             </td>
         </tr>
     ))
+
+
+    
 
     
     console.log(addedToCart);
@@ -26,6 +40,7 @@ function Cart({cartItems}){
         <div className="cart-container">
             <h1>MY CART: </h1>
             <hr/>
+            {cartItems.length === 0 ? <h2>YOUR CART IS EMPTY!</h2> :
             <table className="onCart">
                 <tr>
                     <th>ITEM</th>
@@ -33,7 +48,8 @@ function Cart({cartItems}){
                     <th>PRICE</th>
                 </tr>
                 {addedToCart}      
-            </table>
+            </table>  
+            }
             <hr/>
         </div>
     )

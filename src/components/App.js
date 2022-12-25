@@ -22,7 +22,11 @@ function App() {
   function handleBuy(frameObj){
     setCartItems([...cartItems, frameObj])
   }
- 
+
+  function handleRemove(frameObj){
+    const updatedCart = cartItems.filter(item => item !== frameObj)
+    setCartItems(updatedCart);
+  }
   return (
     <div className="App">
       <Header/>
@@ -36,7 +40,7 @@ function App() {
           <ShopList frameList={frameList} onHandleBuy={handleBuy}/>
         </Route>
         <Route  exact path="/Cart">
-          <Cart cartItems={cartItems}/>
+          <Cart cartItems={cartItems} onRemoveItem={handleRemove}/>
         </Route>
         <Route exact path="/">
           <Home />
