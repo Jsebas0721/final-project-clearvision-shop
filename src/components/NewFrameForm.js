@@ -5,7 +5,7 @@ function NewFrameForm({onAddFrame}){
 const [frameData, setFrameData] = useState({
     name: "",
     image: "",
-    price: "",
+    price: 0.0,
 })
 
 function handleChange(event){

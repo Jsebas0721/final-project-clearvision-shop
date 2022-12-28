@@ -47,21 +47,21 @@
       "name": "BCBG CATERINA",
       "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_caterina_rosegold.jpg",
       "price": 55.01,
-      "onCart": true
+      "onCart": false
     },
     {
       "name": "BCBG FARRAH",
       "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_farrah_navyfade.jpg",
       "price": "23.57",
       "id": 8,
-      "onCart": true
+      "onCart": false
     },
     {
       "name": "BCBG FATIMA",
       "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_fatima_black.jpg",
       "price": "8.79",
       "id": 9,
-      "onCart": true
+      "onCart": false
     }
   ]
 }

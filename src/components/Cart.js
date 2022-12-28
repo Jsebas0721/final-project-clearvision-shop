@@ -1,8 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 
 function Cart({cartItems, onRemoveItem}){
 
-   
+const [totalCart, setTotalCart] = useState(0); 
 
 function handleClick(event){
   
@@ -20,6 +20,7 @@ function handleClick(event){
         console.log("Removed Frame: ",frame)
         onRemoveItem(frame);
     });
+   
 }
 
    const addedToCart = cartItems.map(item => (
@@ -38,6 +39,8 @@ function handleClick(event){
             </td>
         </tr>
     ))
+   
+  
 
     return(
         <div className="cart-container">
@@ -50,7 +53,17 @@ function handleClick(event){
                     <th>DESCRIPTION</th>
                     <th>PRICE</th>
                 </tr>
-                {addedToCart}      
+                {addedToCart}   
+                <tr className="cart-total">
+                    <td>
+                    </td>
+                    <td>
+                        <p>TOTAL:</p>
+                    </td>
+                    <td>
+                        {parseFloat(totalCart).toFixed(2)}
+                    </td>
+                </tr>   
             </table>  
             }
             <hr/>

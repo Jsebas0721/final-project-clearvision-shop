@@ -137,6 +137,10 @@ table{
   width: 150px;
 }
 
+.cart-total{
+  font-weight: bolder;
+}
+
 @media (min-width: 768px) {
   .frameCards {
     display: flex;
