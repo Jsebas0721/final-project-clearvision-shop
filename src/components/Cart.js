@@ -1,21 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Cart({cartItems, onRemoveItem}){
 
    
 
 function handleClick(event){
-    console.log("Item Removed")
-    console.log(event)
-    cartItems.map(item => {
-        if(item.id === event){
-            onRemoveItem(item);
-        }
-    })
+  
+    fetch(`http://localhost:3000/glasses/${event}`,{
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          "onCart": false,
+        })
+      })
+    .then(resp => resp.json())
+    .then(frame => {
+        console.log("Removed Frame: ",frame)
+        onRemoveItem(frame);
+    });
 }
 
    const addedToCart = cartItems.map(item => (
-        <tr>
+        <tr key={item.id}>
             <td>
                 <img src={item.image}/>
             </td>
@@ -31,11 +39,6 @@ function handleClick(event){
         </tr>
     ))
 
-
-    
-
-    
-    console.log(addedToCart);
     return(
         <div className="cart-container">
             <h1>MY CART: </h1>

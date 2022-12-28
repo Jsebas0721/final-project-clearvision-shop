@@ -11,21 +11,40 @@ function App() {
 
   const [frameList, setFrameList]= useState([]);
   const [cartItems, setCartItems]= useState([]);
-
+  
+  
+  
   useEffect(()=>{
     fetch('http://localhost:3000/glasses')
     .then(resp => resp.json())
-    .then(frameList => setFrameList(frameList))
+    .then(frameList => {
+      setFrameList(frameList)
+      const cart = frameList.filter(frame => frame.onCart);
+      setCartItems(cart);
+    })
   },[])
 
 
   function handleBuy(frameObj){
+    const boughtFrames = frameList.map(frame => {
+      if(frame.id === frameObj.id){
+        return frameObj;
+      }else{
+        return frame;
+      }
+    })
+    setFrameList(boughtFrames);
     setCartItems([...cartItems, frameObj])
   }
 
+ 
   function handleRemove(frameObj){
-    const updatedCart = cartItems.filter(item => item !== frameObj)
+    const updatedCart = cartItems.filter(item => item.id !== frameObj.id)
     setCartItems(updatedCart);
+    
+    fetch('http://localhost:3000/glasses')
+    .then(resp => resp.json())
+    .then(frameList => setFrameList(frameList)) 
   }
   return (
     <div className="App">
@@ -37,7 +56,7 @@ function App() {
         <Route  exact path="/Shop">
           <NewFrameForm/>
           <hr/>
-          <ShopList frameList={frameList} onHandleBuy={handleBuy}/>
+          <ShopList frameList={frameList} onHandleBuy={handleBuy} />
         </Route>
         <Route  exact path="/Cart">
           <Cart cartItems={cartItems} onRemoveItem={handleRemove}/>

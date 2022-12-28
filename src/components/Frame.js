@@ -2,10 +2,24 @@ import React from "react";
 
 function Frame({frame, onHandleBuy}){
 
-    const{name,image, price} = frame
+    const{id,name,image, price, onCart} = frame
 
     function handleClick(){
-        onHandleBuy(frame);   
+        
+        fetch(`http://localhost:3000/glasses/${id}`,{
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              "onCart": true,
+            })
+          })
+        .then(resp => resp.json())
+        .then(frame => {
+            console.log("Added to Cart: ",frame)
+            onHandleBuy(frame)
+        });
     }
 
     return(
@@ -15,7 +29,11 @@ function Frame({frame, onHandleBuy}){
                 <h4>{name}</h4>
                 <span>
                     <p>Price: {price}</p>
-                    <button onClick={handleClick}>Add to Cart!</button> 
+                    {onCart ? 
+                    <button className="disabled-button" disabled>Added To Cart</button> :
+                    <button className="active-button" onClick={handleClick}>Add to Cart!</button> 
+                    }
+                    
                 </span>   
             </li>
         </div>

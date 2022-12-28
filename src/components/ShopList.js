@@ -4,7 +4,7 @@ import Frame from "./Frame";
 function ShopList({frameList, onHandleBuy}){
 
 const frames = frameList.map((frame) => (
-    <Frame key={frame.id} frame={frame} onHandleBuy={onHandleBuy}/>
+    <Frame key={frame.id} frame={frame} onHandleBuy={onHandleBuy} />
 ))
 
 return (
