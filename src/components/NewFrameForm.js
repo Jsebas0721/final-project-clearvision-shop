@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 
-function NewFrameForm(){
+function NewFrameForm({onAddFrame}){
+
+const [frameData, setFrameData] = useState({
+    name: "",
+    image: "",
+    price: "",
+})
 
 function handleChange(event){
-    
+
+    console.log(event.target.value)
+    setFrameData({
+        ...frameData,
+        [event.target.name]: event.target.value,
+    })
 }
+
+function handleSubmit(event){
+    event.preventDefault();
+    fetch('http://localhost:3000/glasses',{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(frameData)
+    })
+    .then(resp => resp.json())
+    .then(frame => onAddFrame(frame))
+
+}
+
  return(
     <div className="new-frame-form">
         <h1>New Frame</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Name: </label>
             <input 
             type="text" 

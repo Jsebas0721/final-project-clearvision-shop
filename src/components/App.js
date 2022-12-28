@@ -41,10 +41,15 @@ function App() {
   function handleRemove(frameObj){
     const updatedCart = cartItems.filter(item => item.id !== frameObj.id)
     setCartItems(updatedCart);
-    
+
     fetch('http://localhost:3000/glasses')
     .then(resp => resp.json())
     .then(frameList => setFrameList(frameList)) 
+  }
+
+  function handleAddFrame(frameObj){
+    console.log("New Frame Added: ", frameObj);
+    setFrameList([...frameList, frameObj])
   }
   return (
     <div className="App">
@@ -54,7 +59,7 @@ function App() {
       <hr/>
       <Switch>
         <Route  exact path="/Shop">
-          <NewFrameForm/>
+          <NewFrameForm onAddFrame={handleAddFrame}/>
           <hr/>
           <ShopList frameList={frameList} onHandleBuy={handleBuy} />
         </Route>

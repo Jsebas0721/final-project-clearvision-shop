@@ -12,14 +12,14 @@
       "name": "BCBG AINSLEY",
       "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_ainsley_red.jpg",
       "price": 25.98,
-      "onCart": false
+      "onCart": true
     },
     {
       "id": 3,
       "name": "BCBG ADELINA",
       "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_adelina_rosegold.jpg",
       "price": 5.99,
-      "onCart": false
+      "onCart": true
     },
     {
       "id": 4,
@@ -47,7 +47,21 @@
       "name": "BCBG CATERINA",
       "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_caterina_rosegold.jpg",
       "price": 55.01,
-      "onCart": false
+      "onCart": true
+    },
+    {
+      "name": "BCBG FARRAH",
+      "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_farrah_navyfade.jpg",
+      "price": "23.57",
+      "id": 8,
+      "onCart": true
+    },
+    {
+      "name": "BCBG FATIMA",
+      "image": "https://cvo-magento-media.s3.amazonaws.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bcbg_fatima_black.jpg",
+      "price": "8.79",
+      "id": 9,
+      "onCart": true
     }
   ]
 }
